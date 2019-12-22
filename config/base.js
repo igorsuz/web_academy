@@ -37,7 +37,7 @@ const baseConf = () => {
       path: path.join(__dirname, `./${constants.BUIL_DIR}`),
       filename: "[name].js",
       chunkFilename: "[name].chunkhash.js",
-      publicPath: "/"
+      publicPath: "./"
     },
     mode: "development",
     devtool: "source-map",
