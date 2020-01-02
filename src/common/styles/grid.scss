@@ -5,7 +5,6 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   align-items: flex-start;
-  align-items: flex-start;
 }
 
 [class*="col-"] {
@@ -18,6 +17,7 @@ $col-size: 100% / 12;
 @for $i from 1 through $total-cols {
   .col-#{$i} {
     width: $col-size * $i;
+    // height: $col-size * $i;
   }
 }
 
@@ -30,22 +30,24 @@ $col-size: 100% / 12;
 }
 @media screen and (max-width: $screen-xl - 1px) {
   @for $i from 1 through $total-cols {
-    .col-md-#{$i} {
+    .col-xl-#{$i} {
       width: $col-size * $i;
     }
   }
 }
 @media screen and (max-width: $screen-md - 1px) {
   @for $i from 1 through $total-cols {
-    .col-sm-#{$i} {
+    .col-md-#{$i} {
       width: $col-size * $i;
+      // height: $col-size * $i;
     }
   }
 }
 @media screen and (max-width: $screen-sm - 1px) {
   @for $i from 1 through $total-cols {
-    .col-xs-#{$i} {
+    .col-sm-#{$i} {
       width: $col-size * $i;
+      // height: $col-size * $i;
     }
   }
 }

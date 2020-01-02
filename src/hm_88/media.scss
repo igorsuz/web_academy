@@ -1,0 +1,81 @@
+@media (max-width: 812.1px) {
+  .topic {
+    font-size: 28px;
+  }
+  .navi {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768.5px) {
+  .topic {
+    font-size: 26px;
+    width: 355px;
+  }
+  .block {
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 719px) {
+  .baner-content {
+    height: 200px;
+  }
+  .topic {
+    width: 100%;
+    font-size: 32px;
+    top: -70px;
+  }
+  .navi {
+    width: 80%;
+    top: -90px;
+    right: 0;
+    img {
+      height: 100%;
+    }
+  }
+  .menu {
+    position: absolute;
+    display: block;
+    top: -75px;
+    background-color: #ffffff;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.5s;
+    .col {
+      cursor: pointer;
+      padding-left: 20px;
+      padding-top: 20px;
+      width: 100%;
+      height: 40px;
+    }
+  }
+  .btn-toggle {
+    display: block;
+    position: absolute;
+    top: -100px;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d0d4d8;
+    background-color: transparent;
+  }
+  .btn-toggle img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .menu.active {
+    visibility: visible;
+    transform: scaleY(1);
+  }
+}
