@@ -81,30 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/hm_88/hm_88.js":
-/*!****************************!*\
-  !*** ./src/hm_88/hm_88.js ***!
-  \****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _hm_88_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hm_88.scss */ "./src/hm_88/hm_88.scss");
-/* harmony import */ var _hm_88_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hm_88_scss__WEBPACK_IMPORTED_MODULE_0__);
-
-
-/***/ }),
-
-/***/ "./src/hm_88/hm_88.scss":
-/*!******************************!*\
-  !*** ./src/hm_88/hm_88.scss ***!
-  \******************************/
+/***/ "./src/example_js/example_js.css":
+/*!***************************************!*\
+  !*** ./src/example_js/example_js.css ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -112,17 +97,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7:
-/*!**********************************!*\
-  !*** multi ./src/hm_88/hm_88.js ***!
-  \**********************************/
+/***/ "./src/example_js/example_js.js":
+/*!**************************************!*\
+  !*** ./src/example_js/example_js.js ***!
+  \**************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _example_js_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./example_js.css */ "./src/example_js/example_js.css");
+/* harmony import */ var _example_js_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_example_js_css__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/***/ }),
+
+/***/ 10:
+/*!********************************************!*\
+  !*** multi ./src/example_js/example_js.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/hm_88/hm_88.js */"./src/hm_88/hm_88.js");
+module.exports = __webpack_require__(/*! ./src/example_js/example_js.js */"./src/example_js/example_js.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=hm_88.js.map
+//# sourceMappingURL=example_js.js.map

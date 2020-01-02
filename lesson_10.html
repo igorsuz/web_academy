@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="http://localhost:35729/livereload.js"></script>
+    <title key="title"></title>
+  <link href="./lesson_10.css" rel="stylesheet"></head>
+  <body>
+    <h1>Hello from lesson_10</h1>
+    <script>
+      let text = prompt("enter some test here");
+      let result = "";
+      for (let i = 0; i < text.length; i++) {
+        result = result + text[i] + "-";
+        if (i == text.length - 1) {
+          result = result + text[i];
+        }
+      }
+      alert(result);
+
+      // let password = prompt("enter password");
+      // let string_hello = "Hello Hello";
+      // let new_string_hello = "";
+      // for (let i = 0; i < string_hello.length; i++) {
+      //   new_string_hello = new_string_hello + "*";
+      // }
+      // console.log(new_string_hello);
+
+      // let string_hello = "HelloHello";
+      // let new_string_hello = "";
+      // for (let i = string_hello.length - 1; i >= 0; i--) {
+      //   new_string_hello = new_string_hello + string_hello[i];
+      // }
+      // alert(new_string_hello);
+
+      // let word = prompt("Hello Hello");
+      // let vowelCoult = 0;
+      // for (let i = 0; i < word.length; i++) {
+      //   if (
+      //     word[i] === "a" ||
+      //     word[i] === "e" ||
+      //     word[i] === "y" ||
+      //     word[i] === "o" ||
+      //     word[i] === "i"
+      //   ) {
+      //     vowelCoult++;
+      //     console.log(vowelCoult);
+      //   }
+      // }
+    </script>
+  <script type="text/javascript" src="./lesson_10.js"></script></body>
+</html>

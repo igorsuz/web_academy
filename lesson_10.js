@@ -81,30 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/hm_88/hm_88.js":
-/*!****************************!*\
-  !*** ./src/hm_88/hm_88.js ***!
-  \****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _hm_88_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hm_88.scss */ "./src/hm_88/hm_88.scss");
-/* harmony import */ var _hm_88_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hm_88_scss__WEBPACK_IMPORTED_MODULE_0__);
-
-
-/***/ }),
-
-/***/ "./src/hm_88/hm_88.scss":
-/*!******************************!*\
-  !*** ./src/hm_88/hm_88.scss ***!
-  \******************************/
+/***/ "./src/lesson_10/lesson_10.css":
+/*!*************************************!*\
+  !*** ./src/lesson_10/lesson_10.css ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -112,17 +97,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7:
-/*!**********************************!*\
-  !*** multi ./src/hm_88/hm_88.js ***!
-  \**********************************/
+/***/ "./src/lesson_10/lesson_10.js":
+/*!************************************!*\
+  !*** ./src/lesson_10/lesson_10.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _lesson_10_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lesson_10.css */ "./src/lesson_10/lesson_10.css");
+/* harmony import */ var _lesson_10_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lesson_10_css__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/***/ }),
+
+/***/ 9:
+/*!******************************************!*\
+  !*** multi ./src/lesson_10/lesson_10.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/hm_88/hm_88.js */"./src/hm_88/hm_88.js");
+module.exports = __webpack_require__(/*! ./src/lesson_10/lesson_10.js */"./src/lesson_10/lesson_10.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=hm_88.js.map
+//# sourceMappingURL=lesson_10.js.map
