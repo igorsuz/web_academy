@@ -31,5 +31,8 @@
   ],
   "example_js": [
     "./src/example_js/example_js.js"
+  ],
+  "homework_10": [
+    "./src/homework_10/homework_10.js"
   ]
 }
