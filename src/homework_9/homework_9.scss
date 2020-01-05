@@ -1,0 +1,43 @@
+.light_traffic {
+  margin: 0 auto;
+  width: 300px;
+  height: 1000px;
+  background-color: rgb(187, 183, 183);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  .color {
+    margin: 0 auto;
+    width: 280px;
+    height: 280px;
+    .red {
+      background-color: red;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+    .yellow {
+      background-color: yellow;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+    .green {
+      background-color: green;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+  }
+}
+.btn {
+  width: 280px;
+  margin: 0 auto;
+  #start,
+  #stop {
+    font-size: 48px;
+  }
+}
