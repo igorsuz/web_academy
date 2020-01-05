@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="http://localhost:35729/livereload.js"></script>
+    <title key="title"></title>
+  <link href="./homework_9.css" rel="stylesheet"></head>
+  <body>
+    <div class="light_traffic">
+      <div class="color red" id="red">
+        <div class="red"></div>
+      </div>
+      <div class="color yellow" id="yellow">
+        <div class="yellow"></div>
+      </div>
+      <div class="color green" id="green">
+        <div class="green"></div>
+      </div>
+    </div>
+    <!-- <div class="btn">
+      <input type="button" onclick="myFun()" value="Старт" id="start" />
+      <input type="button" onclick="return" value="Стоп" id="stop" />
+    </div> -->
+    <script>
+      function myFun() {
+        let green = document.getElementsByClassName("green")[0];
+        let red = document.getElementsByClassName("red")[0];
+        let yellow = document.getElementsByClassName("yellow")[0];
+        // не понял как отключить функцию при нажатии стоп
+        //У меня функция повторяется постоянно
+
+        green.style.opacity = 1;
+        setTimeout(function() {
+          green.style.opacity = 0.3;
+          red.style.opacity = 0.3;
+          yellow.style.opacity = 1;
+        }, 2000);
+
+        setTimeout(function() {
+          green.style.opacity = 0.3;
+          red.style.opacity = 1;
+          yellow.style.opacity = 0.3;
+        }, 5000);
+
+        setTimeout(function() {
+          green.style.opacity = 0.3;
+          red.style.opacity = 1;
+          yellow.style.opacity = 1;
+        }, 7000);
+
+        setTimeout(function() {
+          green.style.opacity = 1;
+          red.style.opacity = 0.3;
+          yellow.style.opacity = 0.3;
+        }, 9000);
+      }
+
+      let timer = setInterval(function() {
+        myFun();
+      }, 12000);
+      myFun();
+    </script>
+  <script type="text/javascript" src="./homework_9.js"></script></body>
+</html>

@@ -12,132 +12,132 @@
   <link href="./homework_10.css" rel="stylesheet"></head>
   <body>
     <script>
-      //Запускаем случайные числа от 1 до 100
-      // function randomInteger(min, max) {
-      //   let randomNumber = min - 0.5 + Math.random() * (max - min + 1);
-      //   return Math.floor(randomNumber);
-      // }
-      // alert(randomInteger(1, 100));
-      //*****************
-      //синтаксис объектов
-      // let user = "";
-      // let name;
-      // name = "Вася";
-      // name = "Сергей";
-      // name = "";
-      // let surname = "Петров";
-      // console.log(name);
-      //*******************
-      //Создайте функцию isEmpty(obj)
-      // function isEmpty(obj) {
-      //   if (obj.length > 0) {
-      //     return true;
-      //   } else {
-      //     return false;
-      //   }
-      // }
-      // let obj = prompt("введите объект", "");
+      // Запускаем случайные числа от 1 до 100
+      function randomInteger(min, max) {
+        let randomNumber = min - 0.5 + Math.random() * (max - min + 1);
+        return Math.floor(randomNumber);
+      }
+      alert(randomInteger(1, 100));
+      // *****************
+      // синтаксис объектов
+      let user = "";
+      let name;
+      name = "Вася";
+      name = "Сергей";
+      name = "";
+      let surname = "Петров";
+      console.log(name);
+      // *******************
+      // Создайте функцию isEmpty(obj)
+      function isEmpty(obj) {
+        if (obj.length > 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      let obj = prompt("введите объект", "");
 
-      // if (isEmpty(obj)) {
-      //   alert("Объект не определен");
-      // } else {
-      //   alert("Объект введен верно");
-      // }
-      //*************
-      //Сумма зарплат
-      // let arr = [
-      //   {
-      //     name: "John",
-      //     salary: 1000
-      //   },
-      //   {
-      //     name: "Alice",
-      //     salary: 600
-      //   },
-      //   {
-      //     name: "Peter",
-      //     salary: 2000
-      //   },
-      //   {
-      //     name: "Alex",
-      //     salary: 1800
-      //   }
-      // ];
-      // let result = arr.reduce((sum, current) => sum + current.salary, 0);
-      // alert(result);
-      //***************
-      //Максимальная зарплата
-      // let arr = {
-      //   John: 200,
-      //   Jack: 1200,
-      //   Alisa: 400,
-      //   Nik: 100
-      // };
-      //***************
-      //Создайте функцию multiplyNumeric, которая получает объект и умножает все численные свойства на 2.
-      // function multiplyNumeric(a) {
-      //   return a * 2;
-      // }
-      // let a = prompt();
-      // let result = multiplyNumeric(a);
-      // alert(result);
-      //****************
-      //Задание 8 добавление чисел в массив. Сделал через цикл
-      // let arr = [];
-      // let a;
-      // while (a === undefined) {
-      //   a = prompt("Введите число");
-      //   if (a !== null && a !== "" && !isNaN(a)) {
-      //     arr.push(Number(a));
-      //     a = undefined;
-      //   }
-      // }
-      // alert(arr);
-      //******************
-      //Задание 9 поиск значения в масиве
-      // function find(arr, value) {
-      //   return value > 1;
-      // }
-      // console.log([4, "value", 12].findIndex(find));
-      // console.log([4, 6].findIndex(find));
-      //*******************
+      if (isEmpty(obj)) {
+        alert("Объект не определен");
+      } else {
+        alert("Объект введен верно");
+      }
+      // *************
+      // Сумма зарплат
+      let arr = [
+        {
+          name: "John",
+          salary: 1000
+        },
+        {
+          name: "Alice",
+          salary: 600
+        },
+        {
+          name: "Peter",
+          salary: 2000
+        },
+        {
+          name: "Alex",
+          salary: 1800
+        }
+      ];
+      let result = arr.reduce((sum, current) => sum + current.salary, 0);
+      alert(result);
+      // ***************
+      // Максимальная зарплата
+      let arr = {
+        John: 200,
+        Jack: 1200,
+        Alisa: 400,
+        Nik: 100
+      };
+      // ***************
+      // Создайте функцию multiplyNumeric, которая получает объект и умножает все численные свойства на 2.
+      function multiplyNumeric(a) {
+        return a * 2;
+      }
+      let a = prompt();
+      let result = multiplyNumeric(a);
+      alert(result);
+      // ****************
+      // Задание 8 добавление чисел в массив. Сделал через цикл
+      let arr = [];
+      let a;
+      while (a === undefined) {
+        a = prompt("Введите число");
+        if (a !== null && a !== "" && !isNaN(a)) {
+          arr.push(Number(a));
+          a = undefined;
+        }
+      }
+      alert(arr);
+      // ******************
+      // Задание 9 поиск значения в масиве
+      function find(arr, value) {
+        return value > 1;
+      }
+      console.log([4, "value", 12].findIndex(find));
+      console.log([4, 6].findIndex(find));
+      // *******************
       // Задание 10
-      //Создайте функцию filterRange(arr, a, b), которая принимает массив чисел arr и возвращает новый массив,
+      // Создайте функцию filterRange(arr, a, b), которая принимает массив чисел arr и возвращает новый массив,
       // который содержит только числа из arr из диапазона от a до b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
-      //Функция не должна менять arr.
-      // function filterRange(arr, a, b) {
-      //   var newarr = [];
-      //   for (let i = 0; i < arr.length; i++) {
-      //     if (arr[i] >= a && arr[i] <= b) {
-      //       newarr.push(arr[i]);
-      //     }
-      //   }
-      //   return newarr;
-      // }
-      // let arr = [20, 11, 5, 8, 0];
+      // Функция не должна менять arr.
+      function filterRange(arr, a, b) {
+        var newarr = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] >= a && arr[i] <= b) {
+            newarr.push(arr[i]);
+          }
+        }
+        return newarr;
+      }
+      let arr = [20, 11, 5, 8, 0];
 
-      // let filtered = filterRange(arr, 0, 11);
-      // alert(filtered);
-      //********************
-      //Задание 11
-      // function pow(x, n) {
-      //   let result = x;
+      let filtered = filterRange(arr, 0, 11);
+      alert(filtered);
+      // ********************
+      // Задание 11
+      function pow(x, n) {
+        let result = x;
 
-      //   for (let i = 1; i < n; i++) {
-      //     result *= x;
-      //   }
+        for (let i = 1; i < n; i++) {
+          result *= x;
+        }
 
-      //   return result;
-      // }
+        return result;
+      }
 
-      // let x = prompt("x?", "");
-      // let n = prompt("n?", "");
+      let x = prompt("x?", "");
+      let n = prompt("n?", "");
 
-      // if (n < 1) {
-      //   alert(`Степень ${n} не поддерживается, используйте натуральное число`);
-      // } else {
-      //   alert(pow(x, n));
-      // }
+      if (n < 1) {
+        alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+      } else {
+        alert(pow(x, n));
+      }
     </script>
   <script type="text/javascript" src="./homework_10.js"></script></body>
 </html>
