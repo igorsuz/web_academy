@@ -11,59 +11,81 @@
     <title key="title"></title>
   </head>
   <body>
-    <div class="light_traffic">
-      <div class="color red" id="red">
-        <div class="red"></div>
-      </div>
-      <div class="color yellow" id="yellow">
-        <div class="yellow"></div>
-      </div>
-      <div class="color green" id="green">
-        <div class="green"></div>
-      </div>
+    <div class="traffic-lighter">
+      <div class="traffic-lighter__light traffic-lighter__light_red"></div>
+      <div class="traffic-lighter__light traffic-lighter__light_yellow"></div>
+      <div class="traffic-lighter__light traffic-lighter__light_green"></div>
+      <button class="traffic-lighter__toggler">ON/OFF</button>
     </div>
-    <!-- <div class="btn">
-      <input type="button" onclick="myFun()" value="Старт" id="start" />
-      <input type="button" onclick="return" value="Стоп" id="stop" />
-    </div> -->
-    <script>
-      function myFun() {
-        let green = document.getElementsByClassName("green")[0];
-        let red = document.getElementsByClassName("red")[0];
-        let yellow = document.getElementsByClassName("yellow")[0];
-        // не понял как отключить функцию при нажатии стоп
-        //У меня функция повторяется постоянно
-
-        green.style.opacity = 1;
-        setTimeout(function() {
-          green.style.opacity = 0.3;
-          red.style.opacity = 0.3;
-          yellow.style.opacity = 1;
-        }, 2000);
-
-        setTimeout(function() {
-          green.style.opacity = 0.3;
-          red.style.opacity = 1;
-          yellow.style.opacity = 0.3;
-        }, 5000);
-
-        setTimeout(function() {
-          green.style.opacity = 0.3;
-          red.style.opacity = 1;
-          yellow.style.opacity = 1;
-        }, 7000);
-
-        setTimeout(function() {
-          green.style.opacity = 1;
-          red.style.opacity = 0.3;
-          yellow.style.opacity = 0.3;
-        }, 9000);
-      }
-
-      let timer = setInterval(function() {
-        myFun();
-      }, 12000);
-      myFun();
-    </script>
   </body>
+  <script>
+    const trafficLighterRoot = document.querySelector(".traffic-lighter");
+    const lights = trafficLighterRoot.querySelectorAll(
+      ".traffic-lighter__light"
+    );
+    const togglerBtn = trafficLighterRoot.querySelector(
+      ".traffic-lighter__toggler"
+    );
+    let isEnabled = false;
+    let activeIndex = 0;
+    let intervalId = 0;
+
+    const toggleOffAll = () => {
+      for (let i = 0; i < lights.length; i++) {
+        lights[i].classList.remove("active");
+      }
+    };
+    const activateLight = () => {
+      lights[activeIndex].classList.add("active");
+    };
+
+    for (let i = 0; i < lights.length; i++) {
+      lights[i].onclick = function() {
+        if (isEnabled) {
+          clearInterval(intervalId);
+          toggleOffAll();
+          activeIndex = i;
+          activateLight();
+          startAutoChange();
+        }
+      };
+    }
+
+    const changeIndex = () => {
+      if (activeIndex + 1 < lights.length) {
+        activeIndex += 1;
+      } else {
+        activeIndex = 0;
+      }
+    };
+
+    const toggleOffLighter = () => {
+      isEnabled = false;
+      toggleOffAll();
+      activeIndex = 0;
+      clearInterval(intervalId);
+    };
+    const startAutoChange = () => {
+      intervalId = setInterval(() => {
+        toggleOffAll();
+        changeIndex();
+        activateLight();
+      }, 1000);
+    };
+    const toggleOnLighter = () => {
+      isEnabled = true;
+      activateLight(0);
+      startAutoChange();
+    };
+
+    const togglerClickHandler = () => {
+      if (isEnabled) {
+        toggleOffLighter();
+      } else {
+        toggleOnLighter();
+      }
+    };
+
+    togglerBtn.onclick = togglerClickHandler;
+  </script>
 </html>
