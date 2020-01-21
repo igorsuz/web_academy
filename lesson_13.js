@@ -102,20 +102,20 @@ __webpack_require__.r(__webpack_exports__);
 
 function trafficLighter(test) {
   var trafficLighterRoot = document.querySelector(test);
-  var lights = trafficLighterRoot.querySelectorAll('.traffic-lighter__light');
-  var togglerBtn = trafficLighterRoot.querySelector('.traffic-lighter__toggler');
+  var lights = trafficLighterRoot.querySelectorAll(".traffic-lighter__light");
+  var togglerBtn = trafficLighterRoot.querySelector(".traffic-lighter__toggler");
   var isEnabled = false;
   var activeIndex = 0;
   var intervalId = 0;
 
   var toggleOffAll = function toggleOffAll() {
     for (var i = 0; i < lights.length; i++) {
-      lights[i].classList.remove('active');
+      lights[i].classList.remove("active");
     }
   };
 
   var activateLight = function activateLight() {
-    lights[activeIndex].classList.add('active');
+    lights[activeIndex].classList.add("active");
   };
 
   var _loop = function _loop(i) {
@@ -164,8 +164,6 @@ function trafficLighter(test) {
   };
 
   var togglerClickHandler = function togglerClickHandler() {
-    console.log('HELLO');
-
     if (isEnabled) {
       toggleOffLighter();
     } else {
