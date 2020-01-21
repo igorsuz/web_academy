@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"example_js.css","sourcesContent":[],"sourceRoot":""}
+{"version":3,"sources":["webpack:///./src/example_js/example_js.scss"],"names":[],"mappings":"AAAA,KAAK,aAAa,YAAY,qBAAqB,uBAAuB,QAAQ","file":"example_js.css","sourcesContent":["span{height:100px;width:100px;display:inline-block;border:1px solid black}.active{background-color:red}\n"],"sourceRoot":""}

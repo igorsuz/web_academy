@@ -81,64 +81,70 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/example_js/example_js.js":
-/*!**************************************!*\
-  !*** ./src/example_js/example_js.js ***!
-  \**************************************/
+/***/ "./src/homework_12/homework_12.js":
+/*!****************************************!*\
+  !*** ./src/homework_12/homework_12.js ***!
+  \****************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _example_js_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./example_js.scss */ "./src/example_js/example_js.scss");
-/* harmony import */ var _example_js_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_example_js_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _homework_12_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./homework_12.scss */ "./src/homework_12/homework_12.scss");
+/* harmony import */ var _homework_12_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_homework_12_scss__WEBPACK_IMPORTED_MODULE_0__);
 
-var colorRoot = document.querySelector(".container");
-var imgs = colorRoot.querySelectorAll("span");
-var btnBack = document.querySelector(".back");
-var btnNext = document.querySelector(".next");
-btnBack.addEventListener("click", function () {
-  for (var i = imgs.length - 1; i < imgs.length; i--) {
-    if (imgs[i].classList.contains("active")) {
-      imgs[i].classList.remove("active");
+var red = document.querySelector(".red");
+var yellow = document.querySelector(".yellow");
+var green = document.querySelector(".green");
+var btnStart = document.getElementById("start");
 
-      if (i > 0) {
-        imgs[i - 1].classList.add("active");
-      } else {
-        imgs[imgs.length - 1].classList.add("active");
-      }
+var toggleOff = function toggleOff() {
+  red.style.backgroundColor = "";
+  yellow.style.backgroundColor = "";
+  green.style.backgroundColor = ""; // btnStart.disabled = true; // блокируем кнопку Старт
+  // btnStop.disabled = false;
+};
 
-      break;
-    }
+var isEnabled = false;
+
+red.onclick = function () {
+  if (isEnabled === true) {
+    toggleOff();
+    red.style.backgroundColor = "red";
   }
-});
-btnNext.addEventListener("click", function () {
-  for (var i = 0; i < imgs.length; i++) {
-    if (imgs[i].classList.contains("active")) {
-      imgs[i].classList.remove("active");
+};
 
-      if (i < imgs.length - 1) {
-        imgs[i + 1].classList.add("active");
-      } else {
-        imgs[0].classList.add("active");
-      }
-
-      break;
-    }
+yellow.onclick = function () {
+  if (isEnabled === true) {
+    toggleOff();
+    yellow.style.backgroundColor = "yellow";
   }
-});
+};
+
+green.onclick = function () {
+  if (isEnabled === true) {
+    toggleOff();
+    green.style.backgroundColor = "green";
+  }
+};
+
+var toggle = function toggle() {
+  isEnabled = !isEnabled;
+};
+
+btnStart.addEventListener("click", toggle);
 
 /***/ }),
 
-/***/ "./src/example_js/example_js.scss":
-/*!****************************************!*\
-  !*** ./src/example_js/example_js.scss ***!
-  \****************************************/
+/***/ "./src/homework_12/homework_12.scss":
+/*!******************************************!*\
+  !*** ./src/homework_12/homework_12.scss ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -146,17 +152,17 @@ btnNext.addEventListener("click", function () {
 
 /***/ }),
 
-/***/ 10:
-/*!********************************************!*\
-  !*** multi ./src/example_js/example_js.js ***!
-  \********************************************/
+/***/ 14:
+/*!**********************************************!*\
+  !*** multi ./src/homework_12/homework_12.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/example_js/example_js.js */"./src/example_js/example_js.js");
+module.exports = __webpack_require__(/*! ./src/homework_12/homework_12.js */"./src/homework_12/homework_12.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=example_js.js.map
+//# sourceMappingURL=homework_12.js.map

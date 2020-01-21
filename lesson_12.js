@@ -81,82 +81,67 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/example_js/example_js.js":
-/*!**************************************!*\
-  !*** ./src/example_js/example_js.js ***!
-  \**************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/lesson_12/lesson_12.js":
+/*!************************************!*\
+  !*** ./src/lesson_12/lesson_12.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _example_js_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./example_js.scss */ "./src/example_js/example_js.scss");
-/* harmony import */ var _example_js_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_example_js_scss__WEBPACK_IMPORTED_MODULE_0__);
+// // import "./lesson_12.scss";
+var myBtn = document.querySelector(".btn");
+var circle = document.querySelector(".span");
+var colors = ["green", "yellow", "purple", "white"];
 
-var colorRoot = document.querySelector(".container");
-var imgs = colorRoot.querySelectorAll("span");
-var btnBack = document.querySelector(".back");
-var btnNext = document.querySelector(".next");
-btnBack.addEventListener("click", function () {
-  for (var i = imgs.length - 1; i < imgs.length; i--) {
-    if (imgs[i].classList.contains("active")) {
-      imgs[i].classList.remove("active");
+randomIndex = function randomIndex() {
+  return colors[Math.floor(Math.random() * colors.length)];
+};
 
-      if (i > 0) {
-        imgs[i - 1].classList.add("active");
-      } else {
-        imgs[imgs.length - 1].classList.add("active");
-      }
-
-      break;
-    }
-  }
-});
-btnNext.addEventListener("click", function () {
-  for (var i = 0; i < imgs.length; i++) {
-    if (imgs[i].classList.contains("active")) {
-      imgs[i].classList.remove("active");
-
-      if (i < imgs.length - 1) {
-        imgs[i + 1].classList.add("active");
-      } else {
-        imgs[0].classList.add("active");
-      }
-
-      break;
-    }
-  }
-});
+myBtn.onclick = function () {
+  //   coordinate += 10;
+  myBtn.style.backgroundColor = randomIndex(); //   circle.style.transform = "translateX(" + coordinate + "px";
+}; // const getRandomNumber = max => {
+//   return Math.floor(Math.random() * max);
+// };
+// const getRandomColor = () => {
+//   return `rgb(${getRandomNumber(255)}, ${getRandomNumber(
+//     255
+//   )}, ${getRandomNumber(255)})`;
+// };
+// const btns = document.querySelectorAll(".btn");
+// const toggleOff = () => {
+//   for (let i = 0; i < btns.length; i++) {
+//     btns[i].style.backgroundColor = "";
+//   }
+// };
+// const toggleOn = btn => {
+//   btn.style.backgroundColor = getRandomColor();
+// };
+// for (let i = 0; i < btns.length; i++) {
+//   btns[i].onclick = () => {
+//     toggleOff();
+//     toggleOn(btns[i]);
+//   };
+// }
 
 /***/ }),
 
-/***/ "./src/example_js/example_js.scss":
-/*!****************************************!*\
-  !*** ./src/example_js/example_js.scss ***!
-  \****************************************/
+/***/ 13:
+/*!******************************************!*\
+  !*** multi ./src/lesson_12/lesson_12.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ 10:
-/*!********************************************!*\
-  !*** multi ./src/example_js/example_js.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ./src/example_js/example_js.js */"./src/example_js/example_js.js");
+module.exports = __webpack_require__(/*! ./src/lesson_12/lesson_12.js */"./src/lesson_12/lesson_12.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=example_js.js.map
+//# sourceMappingURL=lesson_12.js.map

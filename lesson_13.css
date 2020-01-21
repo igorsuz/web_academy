@@ -1,0 +1,5 @@
+
+.traffic-lighter{width:100px;background:#efefef}.traffic-lighter__light{margin:20px auto;width:50px;height:50px;border:1px solid black;border-radius:50%}.traffic-lighter__light_red.active{background-color:red}.traffic-lighter__light_yellow.active{background-color:yellow}.traffic-lighter__light_green.active{background-color:green}
+
+
+/*# sourceMappingURL=lesson_13.css.map*/

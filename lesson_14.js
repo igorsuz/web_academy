@@ -81,64 +81,90 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/example_js/example_js.js":
-/*!**************************************!*\
-  !*** ./src/example_js/example_js.js ***!
-  \**************************************/
+/***/ "./src/lesson_14/garland.js":
+/*!**********************************!*\
+  !*** ./src/lesson_14/garland.js ***!
+  \**********************************/
+/*! exports provided: garland */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "garland", function() { return garland; });
+function getRandom() {
+  var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var max = arguments.length > 1 ? arguments[1] : undefined;
+  return Math.floor(min + Math.random() * max);
+}
+
+function getRandomColor() {
+  return "rgb(".concat(getRandom(0, 255), ", ").concat(getRandom(0, 255), ", ").concat(getRandom(0, 255), ")");
+}
+
+function garland(count) {
+  var body = document.querySelector("body");
+
+  var _loop = function _loop(i) {
+    var el = document.createElement("div");
+    el.style.borderRadius = "50%";
+    el.style.border = "2px solid black";
+    el.style.width = el.style.height = "50px";
+    el.style.display = "inline-block";
+    el.style.backgroundColor = getRandomColor();
+    setInterval(function () {
+      el.style.backgroundColor = getRandomColor();
+    }, getRandom(5500, 100));
+    body.appendChild(el);
+  };
+
+  for (var i = 0; i < count; i++) {
+    _loop(i);
+  }
+}
+
+
+
+/***/ }),
+
+/***/ "./src/lesson_14/lesson_14.js":
+/*!************************************!*\
+  !*** ./src/lesson_14/lesson_14.js ***!
+  \************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _example_js_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./example_js.scss */ "./src/example_js/example_js.scss");
-/* harmony import */ var _example_js_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_example_js_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lesson_14_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lesson_14.scss */ "./src/lesson_14/lesson_14.scss");
+/* harmony import */ var _lesson_14_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lesson_14_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _garland__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./garland */ "./src/lesson_14/garland.js");
+ // import { commentForm } from "./comment-form";
+// commentForm();
 
-var colorRoot = document.querySelector(".container");
-var imgs = colorRoot.querySelectorAll("span");
-var btnBack = document.querySelector(".back");
-var btnNext = document.querySelector(".next");
-btnBack.addEventListener("click", function () {
-  for (var i = imgs.length - 1; i < imgs.length; i--) {
-    if (imgs[i].classList.contains("active")) {
-      imgs[i].classList.remove("active");
 
-      if (i > 0) {
-        imgs[i - 1].classList.add("active");
-      } else {
-        imgs[imgs.length - 1].classList.add("active");
-      }
-
-      break;
-    }
-  }
-});
-btnNext.addEventListener("click", function () {
-  for (var i = 0; i < imgs.length; i++) {
-    if (imgs[i].classList.contains("active")) {
-      imgs[i].classList.remove("active");
-
-      if (i < imgs.length - 1) {
-        imgs[i + 1].classList.add("active");
-      } else {
-        imgs[0].classList.add("active");
-      }
-
-      break;
-    }
-  }
-});
+Object(_garland__WEBPACK_IMPORTED_MODULE_1__["garland"])(100); // const template = `<article class><h1>Hello</h1><p>Test</p></article>`;
+// // const header = document.createElement("h1");
+// // const article = document.createElement("article");
+// // const p = document.createElement("p");
+// // article.appendChild(header);
+// // article.appendChild(p);
+// const body = document.querySelector("body");
+// body.innerHTML = template;
+// // header.classList.add("header");
+// // body.appendChild(article);
+// // console.log(header);
 
 /***/ }),
 
-/***/ "./src/example_js/example_js.scss":
-/*!****************************************!*\
-  !*** ./src/example_js/example_js.scss ***!
-  \****************************************/
+/***/ "./src/lesson_14/lesson_14.scss":
+/*!**************************************!*\
+  !*** ./src/lesson_14/lesson_14.scss ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -146,17 +172,17 @@ btnNext.addEventListener("click", function () {
 
 /***/ }),
 
-/***/ 10:
-/*!********************************************!*\
-  !*** multi ./src/example_js/example_js.js ***!
-  \********************************************/
+/***/ 17:
+/*!******************************************!*\
+  !*** multi ./src/lesson_14/lesson_14.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/example_js/example_js.js */"./src/example_js/example_js.js");
+module.exports = __webpack_require__(/*! ./src/lesson_14/lesson_14.js */"./src/lesson_14/lesson_14.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=example_js.js.map
+//# sourceMappingURL=lesson_14.js.map
