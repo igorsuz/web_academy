@@ -1,0 +1,27 @@
+.traffic-lighter {
+  width: 100px;
+  background: #efefef;
+  &__light {
+    $size: 50px;
+    margin: 20px auto;
+    width: $size;
+    height: $size;
+    border: 1px solid black;
+    border-radius: 50%;
+    &_red {
+      &.active {
+        background-color: red;
+      }
+    }
+    &_yellow {
+      &.active {
+        background-color: yellow;
+      }
+    }
+    &_green {
+      &.active {
+        background-color: green;
+      }
+    }
+  }
+}

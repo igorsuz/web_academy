@@ -1,0 +1,11 @@
+.btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid grey;
+}
+.toggled {
+  transform: scale(1.4);
+  opacity: 0.6;
+  transition: 0.5s;
+}
