@@ -98,6 +98,77 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _homework_9_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./homework_9.scss */ "./src/homework_9/homework_9.scss");
 /* harmony import */ var _homework_9_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_homework_9_scss__WEBPACK_IMPORTED_MODULE_0__);
 
+var trafficLighterRoot = document.querySelector(".traffic-lighter");
+var lights = trafficLighterRoot.querySelectorAll(".traffic-lighter__light");
+var togglerBtn = trafficLighterRoot.querySelector(".traffic-lighter__toggler");
+var isEnabled = false;
+var activeIndex = 0;
+var intervalId = 0;
+
+var toggleOffAll = function toggleOffAll() {
+  for (var i = 0; i < lights.length; i++) {
+    lights[i].classList.remove("active");
+  }
+};
+
+var activateLight = function activateLight() {
+  lights[activeIndex].classList.add("active");
+};
+
+var _loop = function _loop(i) {
+  lights[i].onclick = function () {
+    if (isEnabled) {
+      clearInterval(intervalId);
+      toggleOffAll();
+      activeIndex = i;
+      activateLight();
+      startAutoChange();
+    }
+  };
+};
+
+for (var i = 0; i < lights.length; i++) {
+  _loop(i);
+}
+
+var changeIndex = function changeIndex() {
+  if (activeIndex + 1 < lights.length) {
+    activeIndex += 1;
+  } else {
+    activeIndex = 0;
+  }
+};
+
+var toggleOffLighter = function toggleOffLighter() {
+  isEnabled = false;
+  toggleOffAll();
+  activeIndex = 0;
+  clearInterval(intervalId);
+};
+
+var startAutoChange = function startAutoChange() {
+  intervalId = setInterval(function () {
+    toggleOffAll();
+    changeIndex();
+    activateLight();
+  }, 1000);
+};
+
+var toggleOnLighter = function toggleOnLighter() {
+  isEnabled = true;
+  activateLight(0);
+  startAutoChange();
+};
+
+var togglerClickHandler = function togglerClickHandler() {
+  if (isEnabled) {
+    toggleOffLighter();
+  } else {
+    toggleOnLighter();
+  }
+};
+
+togglerBtn.onclick = togglerClickHandler;
 
 /***/ }),
 
