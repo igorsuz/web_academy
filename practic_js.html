@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <title key="title"></title>
+  <link href="./practic_js.css" rel="stylesheet"></head>
+  <body><script type="text/javascript" src="./practic_js.js"></script></body>
+  <script>
+    let Car = function(x, y) {
+      this.x = x;
+      this.y = y;
+    };
+    Car.prototype.draw = function() {
+      let carHtml = '<img src="./assets/images/car.png">';
+      this.carElement = $(carHtml);
+      this.carElement.css({
+        position: "absolute",
+        left: this.x,
+        top: this.y
+      });
+      $("body").append(this.carElement);
+    };
+    // Car.prototype.moveUp = function() {
+    //   this.y -= 5;
+    //   this.carElement.css({
+    //     left: this.x,
+    //     top: this.y
+    //   });
+    // };
+    // Car.prototype.moveDown = function() {
+    //   this.y += 5;
+    //   this.carElement.css({
+    //     left: this.x,
+    //     top: this.y
+    //   });
+    // };
+
+    // Car.prototype.moveLeft = function() {
+    //   this.x -= 10;
+    //   this.carElement.css({
+    //     left: this.x,
+    //     top: this.y
+    //   });
+    // };
+    Car.prototype.moveRight = function(arg) {
+      this.x += arg;
+      this.carElement.css({
+        left: this.x,
+        top: this.y
+      });
+
+      if (this.x > 500) {
+        this.x = 500;
+      }
+      // if (this.y >= 500) {
+      //   this.y = 500;
+      //   setInterval(() => tesla.moveLeft(), 330);
+      // }
+    };
+
+    let tesla = new Car(-300, 0);
+    let nissan = new Car(-300, 100);
+    tesla.draw();
+    nissan.draw();
+    setInterval(() => tesla.moveRight(10), 30);
+    setInterval(() => nissan.moveRight(15), 10);
+    // setInterval(() => tesla.moveLeft(), 10);
+
+    // let speak = function() {
+    //   console.log(this.sound + "! Меня зовут " + this.name + "!");
+    // };
+    // let cat = {
+    //   sound: "Мяу",
+    //   name: "Кот",
+    //   speak: speak
+    // };
+    // cat.speak();
+  </script>
+  <!-- <h1 id="main-heading">Hello</h1> -->
+  <!-- <body>
+    <h1 id="heading">Найди клад!</h1>
+    <img id="map" width="400" height="400" src="./assets/images/treasuremap.png" />
+    <p id="distance"></p>
+  </body>
+  <script>
+    const getRandomNumber = size => {
+      return Math.floor(Math.random() * size);
+    };
+    ///
+    const getDistance = (event, target) => {
+      let diffX = event.offsetX - target.x;
+      let diffY = event.offsetY - target.y;
+      return Math.sqrt(diffX * diffX + diffY * diffY);
+    };
+    /////
+    const getDistanceHint = distance => {
+      if (distance < 10) {
+        return "Обожжешься!";
+      } else if (distance < 20) {
+        return "Очень горячо";
+      } else if (distance < 40) {
+        return "Горячо";
+      } else if (distance < 80) {
+        return "Тепло";
+      } else if (distance < 160) {
+        return "Холодно";
+      } else if (distance < 320) {
+        return "Очень холодно";
+      } else {
+        return "Замерзнешь!";
+      }
+    };
+    ///
+    let height = 400;
+    let width = 400;
+    let clicks = 0;
+    let target = {
+      x: getRandomNumber(width),
+      y: getRandomNumber(height)
+    };
+    ////
+    $("#map").click(function(event) {
+      clicks++;
+
+      //
+      const distance = getDistance(event, target);
+      const distanceHint = getDistanceHint(distance);
+      //
+      $("#distance").text(distanceHint);
+      //
+      if (distance < 8) {
+        alert("Клад найден! Сделано кликов: " + clicks);
+      }
+    });
+  </script> -->
+</html>

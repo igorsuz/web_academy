@@ -1,0 +1,5 @@
+
+.feed__container{position:relative}.feed__container :nth-child(1){transform:translateX(0)}.feed__container :nth-child(2){transform:translateX(-250)}.feed__container :nth-child(3){transform:translateX(-500)}.post{position:absolute;max-width:350px;display:inline-flex;box-shadow:0 0 8px 0 black;opacity:0;transition:opacity 500ms linear}.post__img{width:100%}.post.active{opacity:1}.btn{width:auto;opacity:0.2}.btn__next{font-size:20px;position:absolute;bottom:0;left:250px}.btn__back{font-size:20px;position:absolute;bottom:0;left:0}
+
+
+/*# sourceMappingURL=lesson_16.css.map*/

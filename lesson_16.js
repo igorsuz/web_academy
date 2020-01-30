@@ -81,82 +81,140 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/lesson_14/garland.js":
-/*!**********************************!*\
-  !*** ./src/lesson_14/garland.js ***!
-  \**********************************/
-/*! exports provided: garland */
+/***/ "./src/lesson_16/feed.js":
+/*!*******************************!*\
+  !*** ./src/lesson_16/feed.js ***!
+  \*******************************/
+/*! exports provided: Feed */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "garland", function() { return garland; });
-// function getRandom(min = 0, max) {
-//   return Math.floor(min + Math.random() * max);
-// }
-// function getRandomColor() {
-//   return `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(
-//     0,
-//     255
-//   )})`;
-// }
-function garland(count) {
-  // const body = document.querySelector("body");
-  // for (let i = 0; i < count; i++) {
-  var el = document.createElement("div");
-  el.style.borderRadius = "50%";
-  el.style.border = "2px solid black";
-  el.style.width = el.style.height = "50px";
-  el.style.display = "inline-block";
-  el.style.backgroundColor = "red"; //   setInterval(() => {
-  //     el.style.backgroundColor = getRandomColor();
-  //   }, getRandom(5500, 100));
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Feed", function() { return Feed; });
+/* harmony import */ var _feed_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./feed.scss */ "./src/lesson_16/feed.scss");
+/* harmony import */ var _feed_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_feed_scss__WEBPACK_IMPORTED_MODULE_0__);
 
-  document.body.appendChild(el); // }
+
+function Feed(mountPoint) {
+  this.mountPoint = mountPoint;
 }
+
+Feed.prototype.init = function () {
+  this.render();
+  this.getPosts();
+};
+
+Feed.prototype.render = function () {
+  this.container = document.createElement("div");
+  this.container.classList.add("feed__container");
+  this.mountPoint.appendChild(this.container);
+  this.btnNext = document.createElement("button");
+  this.btnNext.classList.add("btn__next");
+  this.mountPoint.appendChild(this.btnNext);
+  this.btnBack = document.createElement("button");
+  this.btnBack.classList.add("btn__back");
+  this.mountPoint.appendChild(this.btnBack);
+  this._activeSlide = 2;
+  this._data = [];
+};
+
+Feed.prototype.getPosts = function () {
+  var _this = this;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "http://localhost:3000/movies");
+  xhr.send();
+
+  xhr.onload = function () {
+    if (xhr.status >= 200 && xhr.status < 400) {
+      var data = JSON.parse(xhr.response);
+
+      _this.renderPosts(data);
+
+      console.log(data[2].img);
+    }
+  };
+};
+
+Feed.prototype.renderPosts = function (posts) {
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = posts[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var post = _step.value;
+      this.renderPost(post);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+};
+
+Feed.prototype.renderPost = function (post) {
+  var div = document.createElement("div");
+  div.classList.add("post");
+  var img = document.createElement("img");
+  img.classList.add("post__img");
+  img.src = post.img;
+  div.appendChild(img);
+  this.container.appendChild(div);
+};
 
 
 
 /***/ }),
 
-/***/ "./src/lesson_14/lesson_14.js":
+/***/ "./src/lesson_16/feed.scss":
+/*!*********************************!*\
+  !*** ./src/lesson_16/feed.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/lesson_16/lesson_16.js":
 /*!************************************!*\
-  !*** ./src/lesson_14/lesson_14.js ***!
+  !*** ./src/lesson_16/lesson_16.js ***!
   \************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _lesson_14_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lesson_14.scss */ "./src/lesson_14/lesson_14.scss");
-/* harmony import */ var _lesson_14_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lesson_14_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _garland__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./garland */ "./src/lesson_14/garland.js");
- // import { commentForm } from "./comment-form";
-// commentForm();
+/* harmony import */ var _lesson_16_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lesson_16.scss */ "./src/lesson_16/lesson_16.scss");
+/* harmony import */ var _lesson_16_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lesson_16_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _feed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./feed */ "./src/lesson_16/feed.js");
 
 
-Object(_garland__WEBPACK_IMPORTED_MODULE_1__["garland"])(); // const template = `<article class><h1>Hello</h1><p>Test</p></article>`;
-// // const header = document.createElement("h1");
-// // const article = document.createElement("article");
-// // const p = document.createElement("p");
-// // article.appendChild(header);
-// // article.appendChild(p);
-// const body = document.querySelector("body");
-// body.innerHTML = template;
-// // header.classList.add("header");
-// // body.appendChild(article);
-// // console.log(header);
+var body = document.querySelector("body");
+var feed = new _feed__WEBPACK_IMPORTED_MODULE_1__["Feed"](body);
+feed.init();
 
 /***/ }),
 
-/***/ "./src/lesson_14/lesson_14.scss":
+/***/ "./src/lesson_16/lesson_16.scss":
 /*!**************************************!*\
-  !*** ./src/lesson_14/lesson_14.scss ***!
+  !*** ./src/lesson_16/lesson_16.scss ***!
   \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -165,17 +223,17 @@ Object(_garland__WEBPACK_IMPORTED_MODULE_1__["garland"])(); // const template = 
 
 /***/ }),
 
-/***/ 17:
+/***/ 21:
 /*!******************************************!*\
-  !*** multi ./src/lesson_14/lesson_14.js ***!
+  !*** multi ./src/lesson_16/lesson_16.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/lesson_14/lesson_14.js */"./src/lesson_14/lesson_14.js");
+module.exports = __webpack_require__(/*! ./src/lesson_16/lesson_16.js */"./src/lesson_16/lesson_16.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=lesson_14.js.map
+//# sourceMappingURL=lesson_16.js.map

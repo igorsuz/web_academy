@@ -81,83 +81,133 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 22);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/lesson_14/garland.js":
-/*!**********************************!*\
-  !*** ./src/lesson_14/garland.js ***!
-  \**********************************/
-/*! exports provided: garland */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "garland", function() { return garland; });
-// function getRandom(min = 0, max) {
-//   return Math.floor(min + Math.random() * max);
-// }
-// function getRandomColor() {
-//   return `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(
-//     0,
-//     255
-//   )})`;
-// }
-function garland(count) {
-  // const body = document.querySelector("body");
-  // for (let i = 0; i < count; i++) {
-  var el = document.createElement("div");
-  el.style.borderRadius = "50%";
-  el.style.border = "2px solid black";
-  el.style.width = el.style.height = "50px";
-  el.style.display = "inline-block";
-  el.style.backgroundColor = "red"; //   setInterval(() => {
-  //     el.style.backgroundColor = getRandomColor();
-  //   }, getRandom(5500, 100));
-
-  document.body.appendChild(el); // }
-}
-
-
-
-/***/ }),
-
-/***/ "./src/lesson_14/lesson_14.js":
-/*!************************************!*\
-  !*** ./src/lesson_14/lesson_14.js ***!
-  \************************************/
+/***/ "./src/homework_13/homework_13.js":
+/*!****************************************!*\
+  !*** ./src/homework_13/homework_13.js ***!
+  \****************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _lesson_14_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lesson_14.scss */ "./src/lesson_14/lesson_14.scss");
-/* harmony import */ var _lesson_14_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lesson_14_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _garland__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./garland */ "./src/lesson_14/garland.js");
- // import { commentForm } from "./comment-form";
-// commentForm();
+/* harmony import */ var _homework_13_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./homework_13.scss */ "./src/homework_13/homework_13.scss");
+/* harmony import */ var _homework_13_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_homework_13_scss__WEBPACK_IMPORTED_MODULE_0__);
+ /////
 
+var xhr = new XMLHttpRequest();
+var body = document.querySelector("body");
+var mountPoint = document.createElement("div");
+mountPoint.classList.add("slider-wrapper");
+body.appendChild(mountPoint);
+var btnBox = document.createElement("div");
+btnBox.classList.add("btn_box");
+mountPoint.appendChild(btnBox);
+var NButton = document.createElement("button");
+var PButton = document.createElement("button");
+NButton.classList.add("btn__Next");
+PButton.classList.add("btn__Back");
+btnBox.appendChild(NButton);
+btnBox.appendChild(PButton);
+NButton.textContent = "<<";
+PButton.textContent = ">>";
 
-Object(_garland__WEBPACK_IMPORTED_MODULE_1__["garland"])(); // const template = `<article class><h1>Hello</h1><p>Test</p></article>`;
-// // const header = document.createElement("h1");
-// // const article = document.createElement("article");
-// // const p = document.createElement("p");
-// // article.appendChild(header);
-// // article.appendChild(p);
-// const body = document.querySelector("body");
-// body.innerHTML = template;
-// // header.classList.add("header");
-// // body.appendChild(article);
-// // console.log(header);
+var loadHandler = function loadHandler() {
+  var posts = JSON.parse(xhr.response);
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = posts[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var post = _step.value;
+      var img = document.createElement("img");
+      var containerRoot = document.createElement("div");
+      img.classList.add("slide");
+      img.src = post.img;
+      containerRoot.appendChild(img);
+      containerRoot.classList.add("slider");
+      mountPoint.appendChild(containerRoot);
+      console.log(post.img);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+};
+
+xhr.open("GET", "http://localhost:3000/movies");
+xhr.send();
+xhr.addEventListener("load", loadHandler); ////////
+
+var container = document.querySelector(".slider-wrapper");
+var blocks = container.querySelectorAll(".slide");
+var nextButton = document.querySelector(".btn__Next");
+var prevButton = document.querySelector(".btn__Back");
+var activeIndex = 0;
+console.log(blocks.length); /////
+
+var toggleOff = function toggleOff() {
+  for (var i = 0; i < blocks.length; i++) {
+    blocks[i].classList.remove("active");
+  }
+};
+
+var activeBlock = function activeBlock() {
+  blocks[activeIndex].classList.add("active");
+};
+
+var changeIndexRight = function changeIndexRight() {
+  if (activeIndex + 1 < blocks.length) {
+    activeIndex += 1;
+  } else {
+    activeIndex = 0;
+  }
+};
+
+var changeIndexLeft = function changeIndexLeft() {
+  if (activeIndex - 1 > -1) {
+    activeIndex -= 1;
+  } else {
+    activeIndex = 2;
+  }
+};
+
+var toggleClickRight = function toggleClickRight() {
+  toggleOff();
+  changeIndexRight();
+  activeBlock(0);
+};
+
+var toggleClickLeft = function toggleClickLeft() {
+  toggleOff();
+  changeIndexLeft();
+  activeBlock(0);
+};
+
+nextButton.onclick = toggleClickRight;
+prevButton.onclick = toggleClickLeft;
 
 /***/ }),
 
-/***/ "./src/lesson_14/lesson_14.scss":
-/*!**************************************!*\
-  !*** ./src/lesson_14/lesson_14.scss ***!
-  \**************************************/
+/***/ "./src/homework_13/homework_13.scss":
+/*!******************************************!*\
+  !*** ./src/homework_13/homework_13.scss ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -165,17 +215,17 @@ Object(_garland__WEBPACK_IMPORTED_MODULE_1__["garland"])(); // const template = 
 
 /***/ }),
 
-/***/ 17:
-/*!******************************************!*\
-  !*** multi ./src/lesson_14/lesson_14.js ***!
-  \******************************************/
+/***/ 22:
+/*!**********************************************!*\
+  !*** multi ./src/homework_13/homework_13.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/lesson_14/lesson_14.js */"./src/lesson_14/lesson_14.js");
+module.exports = __webpack_require__(/*! ./src/homework_13/homework_13.js */"./src/homework_13/homework_13.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=lesson_14.js.map
+//# sourceMappingURL=homework_13.js.map

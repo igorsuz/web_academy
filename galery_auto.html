@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><head><link href="./galery_auto.css" rel="stylesheet"></head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="http://localhost:35729/livereload.js"></script>
+    <body>
+      <div onMouseOver="btn_show()" onMouseOut="btn_noshow()" class="wrapper">
+        <script>
+          let imagesArr = ["./1.jpg", "./2.jpg", "./3.jpg", "4.jpg", "5.jpg", "6.jpg"];
+          window.number = "0";
+          let imageCount = imagesArr.length;
+          function image(num) {
+            if (num == 1) {
+              if (number < imageCount - 1) {
+                number++;
+                document.getElementById("images").src = imagesArr[number];
+                document.getElementById("num_img").innerHTML =
+                  number + 1 + "/" + imageCount;
+              }
+            } else {
+              if (number > 0) {
+                number--;
+                document.getElementById("images").src = imagesArr[number];
+                document.getElementById("num_img").innerHTML =
+                  number + 1 + "/" + imageCount;
+              }
+            }
+          }
+          function btn_show() {
+            if (number != 0)
+              document.getElementById("left").style.display = "block";
+            if (number != imageCount - 1)
+              document.getElementById("right").style.display = "block";
+          }
+          function btn_noshow() {
+            document.getElementById("left").style.display = "none";
+            document.getElementById("right").style.display = "none";
+          }
+          document.write('<img id="images" src="' + imagesArr[0] + '">');
+        </script>
+        <div class="left_right" onclick="image(0)" id="left">
+          <img src="./assets/images/preview.png" alt="" />
+        </div>
+        <div class="left_right" onclick="image(1)" id="right">
+          <img src="./assets/images/next.png" alt="" />
+        </div>
+      </div>
+      <center>
+        <p
+          style="font-size: 18px;color: #333; font-weight: bold;"
+          id="num_img"
+        ></p>
+      </center>
+    <script type="text/javascript" src="./galery_auto.js"></script></body>
+  </body>
+</html>

@@ -81,83 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 19);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/lesson_14/garland.js":
-/*!**********************************!*\
-  !*** ./src/lesson_14/garland.js ***!
-  \**********************************/
-/*! exports provided: garland */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "garland", function() { return garland; });
-// function getRandom(min = 0, max) {
-//   return Math.floor(min + Math.random() * max);
-// }
-// function getRandomColor() {
-//   return `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(
-//     0,
-//     255
-//   )})`;
-// }
-function garland(count) {
-  // const body = document.querySelector("body");
-  // for (let i = 0; i < count; i++) {
-  var el = document.createElement("div");
-  el.style.borderRadius = "50%";
-  el.style.border = "2px solid black";
-  el.style.width = el.style.height = "50px";
-  el.style.display = "inline-block";
-  el.style.backgroundColor = "red"; //   setInterval(() => {
-  //     el.style.backgroundColor = getRandomColor();
-  //   }, getRandom(5500, 100));
-
-  document.body.appendChild(el); // }
-}
-
-
-
-/***/ }),
-
-/***/ "./src/lesson_14/lesson_14.js":
-/*!************************************!*\
-  !*** ./src/lesson_14/lesson_14.js ***!
-  \************************************/
+/***/ "./src/galery_auto/galery_auto.js":
+/*!****************************************!*\
+  !*** ./src/galery_auto/galery_auto.js ***!
+  \****************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _lesson_14_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lesson_14.scss */ "./src/lesson_14/lesson_14.scss");
-/* harmony import */ var _lesson_14_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lesson_14_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _garland__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./garland */ "./src/lesson_14/garland.js");
- // import { commentForm } from "./comment-form";
-// commentForm();
+/* harmony import */ var _galery_auto_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./galery_auto.scss */ "./src/galery_auto/galery_auto.scss");
+/* harmony import */ var _galery_auto_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_galery_auto_scss__WEBPACK_IMPORTED_MODULE_0__);
 
-
-Object(_garland__WEBPACK_IMPORTED_MODULE_1__["garland"])(); // const template = `<article class><h1>Hello</h1><p>Test</p></article>`;
-// // const header = document.createElement("h1");
-// // const article = document.createElement("article");
-// // const p = document.createElement("p");
-// // article.appendChild(header);
-// // article.appendChild(p);
-// const body = document.querySelector("body");
-// body.innerHTML = template;
-// // header.classList.add("header");
-// // body.appendChild(article);
-// // console.log(header);
 
 /***/ }),
 
-/***/ "./src/lesson_14/lesson_14.scss":
-/*!**************************************!*\
-  !*** ./src/lesson_14/lesson_14.scss ***!
-  \**************************************/
+/***/ "./src/galery_auto/galery_auto.scss":
+/*!******************************************!*\
+  !*** ./src/galery_auto/galery_auto.scss ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -165,17 +112,17 @@ Object(_garland__WEBPACK_IMPORTED_MODULE_1__["garland"])(); // const template = 
 
 /***/ }),
 
-/***/ 17:
-/*!******************************************!*\
-  !*** multi ./src/lesson_14/lesson_14.js ***!
-  \******************************************/
+/***/ 19:
+/*!**********************************************!*\
+  !*** multi ./src/galery_auto/galery_auto.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/lesson_14/lesson_14.js */"./src/lesson_14/lesson_14.js");
+module.exports = __webpack_require__(/*! ./src/galery_auto/galery_auto.js */"./src/galery_auto/galery_auto.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=lesson_14.js.map
+//# sourceMappingURL=galery_auto.js.map
